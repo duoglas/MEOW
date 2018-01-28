@@ -4,7 +4,7 @@ set -e
 
 cd "$( dirname "${BASH_SOURCE[0]}" )/.."
 
-version=`grep '^version=' ./install.sh | sed -s 's/version=//'`
+version=`grep '^version=' ./install.sh | gsed -s 's/version=//'`
 go_version=`go version`
 echo "creating MEOW binary version $version"
 
@@ -27,11 +27,11 @@ pack() {
     if [[ $1 == "windows" ]]; then
         mv bin/$name.exe script/proxy.exe
         pushd script
-        sed -e 's/$/\r/' ../doc/sample-config/rc > rc.txt
-        sed -e 's/$/\r/' ../doc/sample-config/rc-full > rc-full.txt
-        sed -e 's/$/\r/' ../doc/sample-config/direct > direct.txt
-        sed -e 's/$/\r/' ../doc/sample-config/proxy > proxy.txt
-        sed -e 's/$/\r/' ../doc/sample-config/reject > reject.txt
+        gsed -e 's/$/\r/' ../doc/sample-config/rc > rc.txt
+        gsed -e 's/$/\r/' ../doc/sample-config/rc-full > rc-full.txt
+        gsed -e 's/$/\r/' ../doc/sample-config/direct > direct.txt
+        gsed -e 's/$/\r/' ../doc/sample-config/proxy > proxy.txt
+        gsed -e 's/$/\r/' ../doc/sample-config/reject > reject.txt
         mv meow-taskbar.exe MEOW.exe
         zip $name.zip proxy.exe MEOW.exe rc.txt rc-full.txt direct.txt proxy.txt reject.txt
         rm -f proxy.exe rc.txt rc-full.txt direct.txt proxy.txt reject.txt
@@ -57,8 +57,8 @@ pack linux arm
 pack windows amd64
 pack windows 386
 
-git config --global user.name "renzhn"
-git config --global user.email "renzhen999@gmail.com"
+git config --global user.name "duoglas"
+git config --global user.email "dujing487@gmail.com"
 
 git checkout gh-pages
 rm -rf dist
