@@ -13,5 +13,5 @@ log=$1
     #echo $c
 #done
 
-sort --stable --key 4,4 --key 3,3 $log | sed -e "/closed, total/s,\$,\n\n," > $log-grouped
+sort --stable --key 4,4 --key 3,3 $log | gsed -e "/closed, total/s,\$,\n\n," > $log-grouped
 

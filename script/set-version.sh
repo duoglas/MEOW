@@ -10,7 +10,7 @@ fi
 version=$1
 #echo $version
 
-sed -i -e "s,\(\tversion \+= \)\".*\"$,\1\"$version\"," config.go
-sed -i -e "s/version=.*$/version=$version/" install.sh
-sed -i -e "s/当前版本：[^ ]\+ \(.*\)\$/当前版本：$version \1/" README.md
+gsed -i -e "s,\(\tversion \+= \)\".*\"$,\1\"$version\"," config.go
+gsed -i -e "s/version=.*$/version=$version/" install.sh
+gsed -i -e "s/当前版本：[^ ]\+ \(.*\)\$/当前版本：$version \1/" README.md
 

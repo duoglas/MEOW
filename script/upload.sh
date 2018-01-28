@@ -7,7 +7,7 @@ if [[ $# != 2 ]]; then
     exit 1
 fi
 
-version=`grep '^version=' ./install-meow.sh | sed -s 's/version=//'`
+version=`grep '^version=' ./install-meow.sh | gsed -s 's/version=//'`
 username=$1
 passwd=$2
 
