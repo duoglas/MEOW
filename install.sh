@@ -83,7 +83,7 @@ fi
 bin=MEOW-$os-$arch-$version
 tmpdir=`mktemp -d /tmp/MEOW.XXXXXX`
 tmpbin=$tmpdir/MEOW
-binary_url="https://github.com/renzhn/MEOW/raw/gh-pages/dist/$bin.gz"
+binary_url="https://github.com/duoglas/MEOW/raw/gh-pages/dist/$bin.gz"
 echo "Downloading MEOW binary $binary_url to $tmpbin.gz"
 curl -L "$binary_url" -o $tmpbin.gz || \
     exit_on_fail "Downloading MEOW binary failed"
@@ -92,7 +92,7 @@ chmod +x $tmpbin ||
     exit_on_fail "Can't chmod for $tmpbin"
 
 # Download sample config file if no configuration directory present
-doc_base="https://raw.github.com/renzhn/MEOW/master/doc"
+doc_base="https://raw.github.com/duoglas/MEOW/master/doc"
 config_dir="$HOME/.meow"
 is_update=true
 if [ ! -e $config_dir ]; then

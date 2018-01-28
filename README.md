@@ -23,7 +23,7 @@
 
 ## 获取
 
-- **从源码安装:** 安装 [Go](http://golang.org/doc/install)，然后 `go get github.com/netheril96/MEOW`
+- **从源码安装:** 安装 [Go](http://golang.org/doc/install)，然后 `go get github.com/duoglas/MEOW`
 
 ## 配置
 
